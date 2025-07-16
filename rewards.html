@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Rewards | SafeDrive Rewards</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode-css" disabled>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="SafeDrive Rewards">
+                <span>SafeDrive</span>Rewards
+            </a>
+            <ul class="nav-links">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="trips.html">My Trips</a></li>
+                <li><a href="rewards.html" class="active">Rewards</a></li>
+                <li><a href="vehicle.html">Vehicle</a></li>
+                <li><a href="#" class="btn btn-primary" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Rewards Main Content -->
+    <main class="dashboard-container" id="rewards">
+        <div class="dashboard-header">
+            <div class="user-profile">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="profile-pic">
+                <div class="user-info">
+                    <h1>My Rewards</h1>
+                    <div class="points-balance">
+                        <span class="points-value">1,250</span>
+                        <span class="points-label">SafePoints</span>
+                    </div>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-secondary" id="rewardsHistory">
+                    <i class="fas fa-history"></i> History
+                </button>
+                <button class="btn btn-outline" id="howItWorks">
+                    <i class="fas fa-question-circle"></i> How It Works
+                </button>
+            </div>
+        </div>
+
+        <!-- Rewards Progress -->
+        <section class="rewards-progress-section">
+            <div class="tier-card">
+                <h2><i class="fas fa-medal"></i> Your Tier Status</h2>
+                <div class="tier-status">
+                    <div class="tier-icon silver">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="tier-info">
+                        <h3>Silver Driver</h3>
+                        <p>350 points to Gold Tier</p>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 65%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tier-benefits">
+                    <h4>Silver Benefits:</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 10% bonus on points</li>
+                        <li><i class="fas fa-check"></i> Exclusive silver rewards</li>
+                        <li><i class="fas fa-check"></i> Monthly prize entries</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="points-summary">
+                <h2><i class="fas fa-coins"></i> Points Summary</h2>
+                <div class="points-grid">
+                    <div class="points-card earned">
+                        <div class="points-icon">
+                            <i class="fas fa-arrow-up"></i>
+                        </div>
+                        <div class="points-info">
+                            <h3>Earned</h3>
+                            <div class="points-value">1,450</div>
+                            <div class="points-period">This month</div>
+                        </div>
+                    </div>
+                    <div class="points-card redeemed">
+                        <div class="points-icon">
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
+                        <div class="points-info">
+                            <h3>Redeemed</h3>
+                            <div class="points-value">200</div>
+                            <div class="points-period">This month</div>
+                        </div>
+                    </div>
+                    <div class="points-card bonus">
+                        <div class="points-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="points-info">
+                            <h3>Bonus</h3>
+                            <div class="points-value">150</div>
+                            <div class="points-period">This month</div>
+                        </div>
+                    </div>
+                    <div class="points-card total">
+                        <div class="points-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="points-info">
+                            <h3>Total</h3>
+                            <div class="points-value">1,250</div>
+                            <div class="points-period">Available now</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Available Rewards -->
+        <section class="available-rewards-section">
+            <div class="section-header">
+                <h2><i class="fas fa-gift"></i> Available Rewards</h2>
+                <div class="reward-filter">
+                    <span class="filter-label">Filter:</span>
+                    <select id="rewardFilter">
+                        <option value="all">All Rewards</option>
+                        <option value="fuel">Fuel Discounts</option>
+                        <option value="retail">Retail</option>
+                        <option value="insurance">Insurance</option>
+                        <option value="exclusive">Exclusive</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="rewards-grid">
+                <!-- Reward 1 -->
+                <div class="reward-card fuel">
+                    <div class="reward-badge">Most Popular</div>
+                    <div class="reward-icon">
+                        <i class="fas fa-gas-pump"></i>
+                    </div>
+                    <div class="reward-content">
+                        <h3>Shell Fuel Discount</h3>
+                        <p>15¢ off per gallon at any Shell station</p>
+                        <div class="reward-value">
+                            <span class="points">500</span>
+                            <span class="points-label">SafePoints</span>
+                        </div>
+                    </div>
+                    <div class="reward-actions">
+                        <button class="btn-reward">
+                            Redeem Now <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Reward 2 -->
+                <div class="reward-card retail">
+                    <div class="reward-icon">
+                        <i class="fab fa-amazon"></i>
+                    </div>
+                    <div class="reward-content">
+                        <h3>$10 Amazon Gift Card</h3>
+                        <p>Digital code delivered instantly</p>
+                        <div class="reward-value">
+                            <span class="points">1,000</span>
+                            <span class="points-label">SafePoints</span>
+                        </div>
+                    </div>
+                    <div class="reward-actions">
+                        <button class="btn-reward">
+                            Redeem Now <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Reward 3 -->
+                <div class="reward-card insurance">
+                    <div class="reward-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="reward-content">
+                        <h3>Insurance Discount</h3>
+                        <p>5% off next premium payment</p>
+                        <div class="reward-value">
+                            <span class="points">750</span>
+                            <span class="points-label">SafePoints</span>
+                        </div>
+                    </div>
+                    <div class="reward-actions">
+                        <button class="btn-reward">
+                            Redeem Now <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Reward 4 -->
+                <div class="reward-card exclusive">
+                    <div class="reward-badge">Silver Exclusive</div>
+                    <div class="reward-icon">
+                        <i class="fas fa-mug-hot"></i>
+                    </div>
+                    <div class="reward-content">
+                        <h3>Starbucks Gift Card</h3>
+                        <p>$5 credit for your next coffee</p>
+                        <div class="reward-value">
+                            <span class="points">400</span>
+                            <span class="points-label">SafePoints</span>
+                        </div>
+                    </div>
+                    <div class="reward-actions">
+                        <button class="btn-reward">
+                            Redeem Now <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Reward 5 -->
+                <div class="reward-card fuel">
+                    <div class="reward-icon">
+                        <i class="fas fa-gas-pump"></i>
+                    </div>
+                    <div class="reward-content">
+                        <h3>ExxonMobil Discount</h3>
+                        <p>10¢ off per gallon for 1 month</p>
+                        <div class="reward-value">
+                            <span class="points">800</span>
+                            <span class="points-label">SafePoints</span>
+                        </div>
+                    </div>
+                    <div class="reward-actions">
+                        <button class="btn-reward">
+                            Redeem Now <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Reward 6 -->
+                <div class="reward-card retail">
+                    <div class="reward-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="reward-content">
+                        <h3>Walmart eGift Card</h3>
+                        <p>$15 credit for online or in-store</p>
+                        <div class="reward-value">
+                            <span class="points">1,200</span>
+                            <span class="points-label">SafePoints</span>
+                        </div>
+                    </div>
+                    <div class="reward-actions">
+                        <button class="btn-reward">
+                            Redeem Now <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Points History -->
+        <section class="points-history-section">
+            <h2><i class="fas fa-history"></i> Recent Points Activity</h2>
+            <div class="history-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Points</th>
+                            <th>Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Today</td>
+                            <td>Morning commute (Excellent)</td>
+                            <td class="positive">+15</td>
+                            <td>1,250</td>
+                        </tr>
+                        <tr>
+                            <td>Yesterday</td>
+                            <td>Amazon gift card redemption</td>
+                            <td class="negative">-1,000</td>
+                            <td>1,235</td>
+                        </tr>
+                        <tr>
+                            <td>Yesterday</td>
+                            <td>Afternoon errand (Good)</td>
+                            <td class="positive">+12</td>
+                            <td>2,235</td>
+                        </tr>
+                        <tr>
+                            <td>Monday</td>
+                            <td>Weekly bonus (Silver tier)</td>
+                            <td class="positive">+50</td>
+                            <td>2,223</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>Weekend trip (Fair)</td>
+                            <td class="positive">+5</td>
+                            <td>2,173</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn btn-outline view-all">
+                View Full History <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+    </main>
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <input type="checkbox" id="darkModeToggle" class="toggle-checkbox">
+        <label for="darkModeToggle" class="toggle-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="toggle-ball"></span>
+        </label>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/script.js"></script>
+    <script src="js/dark-mode-toggle.js"></script>
+    <script src="js/rewards.js"></script>
+</body>
+</html>

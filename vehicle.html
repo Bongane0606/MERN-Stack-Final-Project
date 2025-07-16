@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Vehicle | SafeDrive Rewards</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode-css" disabled>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="SafeDrive Rewards">
+                <span>SafeDrive</span>Rewards
+            </a>
+            <ul class="nav-links">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="trips.html">My Trips</a></li>
+                <li><a href="rewards.html">Rewards</a></li>
+                <li><a href="vehicle.html" class="active">Vehicle</a></li>
+                <li><a href="#" class="btn btn-primary" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Vehicle Main Content -->
+    <main class="dashboard-container" id="vehicle">
+        <div class="dashboard-header">
+            <div class="user-profile">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="profile-pic">
+                <div class="user-info">
+                    <h1>My Vehicle</h1>
+                    <div class="vehicle-info">
+                        <span class="vehicle-make">2021 Toyota Camry</span>
+                        <span class="vehicle-id">VIN: 4T1BF1FK9HU680214</span>
+                    </div>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-secondary" id="addVehicle">
+                    <i class="fas fa-plus"></i> Add Vehicle
+                </button>
+                <button class="btn btn-outline" id="vehicleSettings">
+                    <i class="fas fa-cog"></i> Settings
+                </button>
+            </div>
+        </div>
+
+        <!-- Vehicle Status Overview -->
+        <section class="vehicle-status-section">
+            <div class="status-card overall">
+                <div class="status-header">
+                    <h2><i class="fas fa-car"></i> Overall Health</h2>
+                    <div class="status-value good">Good Condition</div>
+                </div>
+                <div class="status-metrics">
+                    <div class="metric">
+                        <div class="metric-icon">
+                            <i class="fas fa-engine"></i>
+                        </div>
+                        <div class="metric-info">
+                            <h3>Engine</h3>
+                            <div class="metric-value good">Optimal</div>
+                        </div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-icon">
+                            <i class="fas fa-tire"></i>
+                        </div>
+                        <div class="metric-info">
+                            <h3>Tires</h3>
+                            <div class="metric-value warning">Check Needed</div>
+                        </div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-icon">
+                            <i class="fas fa-battery-three-quarters"></i>
+                        </div>
+                        <div class="metric-info">
+                            <h3>Battery</h3>
+                            <div class="metric-value good">Strong</div>
+                        </div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-icon">
+                            <i class="fas fa-oil-can"></i>
+                        </div>
+                        <div class="metric-info">
+                            <h3>Fluids</h3>
+                            <div class="metric-value normal">Normal</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="status-card details">
+                <h2><i class="fas fa-info-circle"></i> Vehicle Details</h2>
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <span class="detail-label">Make & Model</span>
+                        <span class="detail-value">Toyota Camry SE</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Year</span>
+                        <span class="detail-value">2021</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Odometer</span>
+                        <span class="detail-value">24,587 miles</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Last Service</span>
+                        <span class="detail-value">May 15, 2023</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Fuel Efficiency</span>
+                        <span class="detail-value">32.4 MPG (avg)</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Connected Since</span>
+                        <span class="detail-value">March 2, 2023</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Maintenance Schedule -->
+        <section class="maintenance-section">
+            <div class="section-header">
+                <h2><i class="fas fa-calendar-check"></i> Maintenance Schedule</h2>
+                <button class="btn btn-primary" id="addMaintenance">
+                    <i class="fas fa-plus"></i> Add Reminder
+                </button>
+            </div>
+
+            <div class="maintenance-list">
+                <div class="maintenance-item upcoming">
+                    <div class="maintenance-icon">
+                        <i class="fas fa-oil-can"></i>
+                    </div>
+                    <div class="maintenance-info">
+                        <h3>Oil Change</h3>
+                        <p>Next due in 1,200 miles or by September 30, 2023</p>
+                        <div class="maintenance-meta">
+                            <span class="type">Regular Maintenance</span>
+                            <span class="date">Last done: May 15, 2023</span>
+                        </div>
+                    </div>
+                    <div class="maintenance-actions">
+                        <button class="btn-action">
+                            <i class="fas fa-calendar"></i> Schedule
+                        </button>
+                    </div>
+                </div>
+
+                <div class="maintenance-item due">
+                    <div class="maintenance-icon">
+                        <i class="fas fa-tire"></i>
+                    </div>
+                    <div class="maintenance-info">
+                        <h3>Tire Rotation</h3>
+                        <p>Due now - last rotated 8,000 miles ago</p>
+                        <div class="maintenance-meta">
+                            <span class="type">Tire Service</span>
+                            <span class="date">Recommended every 5,000-7,500 miles</span>
+                        </div>
+                    </div>
+                    <div class="maintenance-actions">
+                        <button class="btn-action">
+                            <i class="fas fa-calendar"></i> Schedule
+                        </button>
+                    </div>
+                </div>
+
+                <div class="maintenance-item future">
+                    <div class="maintenance-icon">
+                        <i class="fas fa-air-freshener"></i>
+                    </div>
+                    <div class="maintenance-info">
+                        <h3>Cabin Air Filter</h3>
+                        <p>Due in approximately 3 months</p>
+                        <div class="maintenance-meta">
+                            <span class="type">Air Quality</span>
+                            <span class="date">Last replaced: December 10, 2022</span>
+                        </div>
+                    </div>
+                    <div class="maintenance-actions">
+                        <button class="btn-action">
+                            <i class="fas fa-bell"></i> Remind Me
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diagnostic Alerts -->
+        <section class="alerts-section">
+            <div class="section-header">
+                <h2><i class="fas fa-exclamation-triangle"></i> Active Alerts</h2>
+                <div class="alert-filter">
+                    <span class="filter-label">Show:</span>
+                    <select id="alertFilter">
+                        <option value="all">All Alerts</option>
+                        <option value="high">High Priority</option>
+                        <option value="medium">Medium Priority</option>
+                        <option value="low">Low Priority</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="alert-list">
+                <div class="alert-item high">
+                    <div class="alert-icon">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="alert-content">
+                        <h3>Low Tire Pressure</h3>
+                        <p>Front left tire pressure at 28 PSI (recommended: 35 PSI)</p>
+                        <div class="alert-meta">
+                            <span class="time">Detected: Today, 8:30 AM</span>
+                            <span class="location">Location: Home</span>
+                        </div>
+                    </div>
+                    <div class="alert-actions">
+                        <button class="btn-action resolve">
+                            <i class="fas fa-check"></i> Resolve
+                        </button>
+                    </div>
+                </div>
+
+                <div class="alert-item medium">
+                    <div class="alert-icon">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="alert-content">
+                        <h3>Engine Maintenance Soon</h3>
+                        <p>Diagnostic indicates potential spark plug wear</p>
+                        <div class="alert-meta">
+                            <span class="time">Detected: Yesterday, 5:45 PM</span>
+                            <span class="location">Location: Main Street</span>
+                        </div>
+                    </div>
+                    <div class="alert-actions">
+                        <button class="btn-action resolve">
+                            <i class="fas fa-check"></i> Resolve
+                        </button>
+                    </div>
+                </div>
+
+                <div class="alert-item low">
+                    <div class="alert-icon">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="alert-content">
+                        <h3>Wiper Fluid Low</h3>
+                        <p>Windshield washer fluid level below 25%</p>
+                        <div class="alert-meta">
+                            <span class="time">Detected: Monday, 8:00 AM</span>
+                            <span class="location">Location: Workplace</span>
+                        </div>
+                    </div>
+                    <div class="alert-actions">
+                        <button class="btn-action resolve">
+                            <i class="fas fa-check"></i> Resolve
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <input type="checkbox" id="darkModeToggle" class="toggle-checkbox">
+        <label for="darkModeToggle" class="toggle-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="toggle-ball"></span>
+        </label>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/script.js"></script>
+    <script src="js/dark-mode-toggle.js"></script>
+    <script src="js/vehicle.js"></script>
+</body>
+</html>

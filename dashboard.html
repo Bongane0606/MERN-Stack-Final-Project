@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard | SafeDrive Rewards</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode-css" disabled>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="SafeDrive Rewards">
+                <span>SafeDrive</span>Rewards
+            </a>
+            <ul class="nav-links">
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#trips.html">My Trips</a></li>
+                <li><a href="#rewards.html">Rewards</a></li>
+                <li><a href="#vehicle.html">Vehicle</a></li>
+                <li><a href="#" class="btn btn-primary" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- Dashboard Main Content -->
+    <main class="dashboard-container" id="dashboard">
+        <div class="dashboard-header">
+            <div class="user-profile">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="profile-pic">
+                <div class="user-info">
+                    <h1>Welcome back, <span id="userName">Alex</span>!</h1>
+                    <div class="safety-score">
+                        <span class="score-label">Your Safety Score:</span>
+                        <span class="score-value" id="userScore">87</span>
+                        <span class="score-trend up">
+                            <i class="fas fa-arrow-up"></i> 2% from last week
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-secondary">
+                    <i class="fas fa-qrcode"></i> Share Score
+                </button>
+                <button class="btn btn-outline">
+                    <i class="fas fa-chart-line"></i> View Trends
+                </button>
+            </div>
+        </div>
+
+        <!-- Safety Overview -->
+        <section class="dashboard-section safety-overview">
+            <h2><i class="fas fa-shield-alt"></i> Safety Overview</h2>
+            <div class="safety-metrics">
+                <div class="metric">
+                    <div class="gauge-container">
+                        <div class="gauge" id="speedGauge" data-value="82"></div>
+                        <h3>Speed</h3>
+                        <p>You're 12% better than average</p>
+                    </div>
+                </div>
+                <div class="metric">
+                    <div class="gauge-container">
+                        <div class="gauge" id="brakingGauge" data-value="76"></div>
+                        <h3>Braking</h3>
+                        <p>Avoid sudden stops to improve</p>
+                    </div>
+                </div>
+                <div class="metric">
+                    <div class="gauge-container">
+                        <div class="gauge" id="phoneGauge" data-value="94"></div>
+                        <h3>Phone Use</h3>
+                        <p>Excellent focus while driving</p>
+                    </div>
+                </div>
+                <div class="metric">
+                    <div class="gauge-container">
+                        <div class="gauge" id="corneringGauge" data-value="85"></div>
+                        <h3>Cornering</h3>
+                        <p>Smooth turns 89% of the time</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Activity -->
+        <section class="dashboard-section recent-activity">
+            <div class="section-header">
+                <h2><i class="fas fa-clock-rotate-left"></i> Recent Activity</h2>
+                <a href="#trips" class="view-all">View All <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <div class="activity-grid">
+                <div class="activity-card trip">
+                    <div class="card-header">
+                        <i class="fas fa-route"></i>
+                        <span class="time">Today, 8:30 AM</span>
+                    </div>
+                    <h3>Home to Workplace</h3>
+                    <div class="trip-stats">
+                        <div class="stat">
+                            <i class="fas fa-stopwatch"></i>
+                            <span>22 min</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-road"></i>
+                            <span>8.2 mi</span>
+                        </div>
+                        <div class="stat score excellent">
+                            <i class="fas fa-star"></i>
+                            <span>92</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-details">
+                            <i class="fas fa-info-circle"></i> Details
+                        </button>
+                    </div>
+                </div>
+
+                <div class="activity-card alert">
+                    <div class="card-header">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span class="time">Yesterday, 6:15 PM</span>
+                    </div>
+                    <h3>Hard Braking Incident</h3>
+                    <p>Sudden stop detected on Main St</p>
+                    <div class="alert-severity medium">
+                        Medium Severity
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-details">
+                            <i class="fas fa-info-circle"></i> Review
+                        </button>
+                    </div>
+                </div>
+
+                <div class="activity-card reward">
+                    <div class="card-header">
+                        <i class="fas fa-gem"></i>
+                        <span class="time">Yesterday, 5:45 PM</span>
+                    </div>
+                    <h3>Reward Earned!</h3>
+                    <p>50 points for safe afternoon driving</p>
+                    <div class="reward-amount">
+                        +50 <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-details">
+                            <i class="fas fa-gift"></i> Redeem
+                        </button>
+                    </div>
+                </div>
+
+                <div class="activity-card maintenance">
+                    <div class="card-header">
+                        <i class="fas fa-tools"></i>
+                        <span class="time">Monday, 8:00 AM</span>
+                    </div>
+                    <h3>Vehicle Checkup</h3>
+                    <p>Tire pressure low (28 psi)</p>
+                    <div class="maintenance-status warning">
+                        Needs Attention
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-details">
+                            <i class="fas fa-calendar"></i> Schedule
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rewards & Stats -->
+        <section class="dashboard-section rewards-stats">
+            <div class="rewards-card">
+                <h2><i class="fas fa-award"></i> Your Rewards</h2>
+                <div class="points-balance">
+                    <div class="points-display">
+                        <span id="rewardPoints">1,250</span>
+                        <small>SafePoints</small>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 65%"></div>
+                        <div class="progress-text">350 points to next reward tier</div>
+                    </div>
+                </div>
+                <div class="rewards-grid">
+                    <div class="reward-item">
+                        <div class="reward-icon fuel">
+                            <i class="fas fa-gas-pump"></i>
+                        </div>
+                        <h3>Fuel Discount</h3>
+                        <p>15¢ off per gallon</p>
+                        <button class="btn-reward">
+                            500 pts <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="reward-item">
+                        <div class="reward-icon amazon">
+                            <i class="fab fa-amazon"></i>
+                        </div>
+                        <h3>Amazon Voucher</h3>
+                        <p>$10 gift card</p>
+                        <button class="btn-reward">
+                            1,000 pts <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-card">
+                <h2><i class="fas fa-chart-pie"></i> Driving Stats</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-road"></i>
+                        </div>
+                        <div class="stat-value" id="totalMiles">427</div>
+                        <div class="stat-label">Miles Driven</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <div class="stat-value" id="savings">$87</div>
+                        <div class="stat-label">Total Savings</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-car-side"></i>
+                        </div>
+                        <div class="stat-value" id="tripsCount">24</div>
+                        <div class="stat-label">Trips Tracked</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="stat-value" id="co2Saved">58</div>
+                        <div class="stat-label">CO₂ Saved (lbs)</div>
+                    </div>
+                </div>
+                <div class="stat-chart">
+                    <div class="chart-placeholder">
+                        <p>Weekly Driving Performance</p>
+                        <img src="chart-placeholder.png" alt="Performance Chart">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vehicle Health -->
+        <section class="dashboard-section vehicle-health" id="vehicle">
+            <h2><i class="fas fa-car"></i> Vehicle Health</h2>
+            <div class="health-grid">
+                <div class="health-item engine">
+                    <div class="health-icon">
+                        <i class="fas fa-engine"></i>
+                    </div>
+                    <div class="health-info">
+                        <h3>Engine</h3>
+                        <div class="health-status good">Optimal</div>
+                        <p>Last check: 2 days ago</p>
+                    </div>
+                </div>
+                <div class="health-item tires">
+                    <div class="health-icon">
+                        <i class="fas fa-tire"></i>
+                    </div>
+                    <div class="health-info">
+                        <h3>Tires</h3>
+                        <div class="health-status warning">Check Needed</div>
+                        <p>Front left: 28 psi</p>
+                    </div>
+                    <button class="btn-action">
+                        <i class="fas fa-info-circle"></i> Details
+                    </button>
+                </div>
+                <div class="health-item battery">
+                    <div class="health-icon">
+                        <i class="fas fa-battery-three-quarters"></i>
+                    </div>
+                    <div class="health-info">
+                        <h3>Battery</h3>
+                        <div class="health-status good">Strong</div>
+                        <p>Estimated life: 18 months</p>
+                    </div>
+                </div>
+                <div class="health-item fluids">
+                    <div class="health-icon">
+                        <i class="fas fa-oil-can"></i>
+                    </div>
+                    <div class="health-info">
+                        <h3>Fluids</h3>
+                        <div class="health-status normal">Normal</div>
+                        <p>Oil change due in 1,200 mi</p>
+                    </div>
+                    <button class="btn-action">
+                        <i class="fas fa-calendar"></i> Schedule
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Button -->
+        <div class="emergency-container">
+            <button class="emergency-btn" id="emergencyBtn">
+                <i class="fas fa-bell"></i> EMERGENCY SOS
+            </button>
+        </div>
+    </main>
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <input type="checkbox" id="darkModeToggle" class="toggle-checkbox">
+        <label for="darkModeToggle" class="toggle-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="toggle-ball"></span>
+        </label>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/script.js"></script>
+    <script src="js/dark-mode-toggle.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

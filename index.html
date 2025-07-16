@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeDrive Rewards | AI-Powered Safe Driving Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode-css" disabled>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <input type="checkbox" id="darkModeToggle" class="toggle-checkbox">
+        <label for="darkModeToggle" class="toggle-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="toggle-ball"></span>
+        </label>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="images/logo.png" alt="SafeDrive Rewards">
+                <span>SafeDrive</span>Rewards
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#revenue">For Businesses</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="btn btn-primary" id="navSignIn">Sign In</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Drive Safe. <span>Earn Rewards.</span></h1>
+                <p class="subtitle">The AI-powered platform that makes roads safer while putting money back in your pocket.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary" id="openSignInModal">
+                        <i class="fas fa-sign-in-alt"></i> Sign In
+                    </a>
+                    <a href="#" class="btn btn-secondary" id="openSignUpModal">
+                        <i class="fas fa-user-plus"></i> Create Account
+                    </a>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="25000">0</div>
+                        <div class="stat-label">Lives Protected</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="3.2">0</div>
+                        <div class="stat-label">Million Miles</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="500000">0</div>
+                        <div class="stat-label">Rewards Redeemed</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="phone-mockup">
+                    <img src="app-screenshots/home-screen.jpg" alt="SafeDrive App" class="active">
+                    <img src="app-screenshots/emergency-button.jpg" alt="Emergency Feature">
+                    <img src="app-screenshots/driving-analytics.jpg" alt="Driving Analytics">
+                </div>
+                <div class="mockup-controls">
+                    <button class="active" data-slide="0"></button>
+                    <button data-slide="1"></button>
+                    <button data-slide="2"></button>
+                </div>
+            </div>
+        </div>
+        <div class="wave-shape"></div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <h2>The Problem We Solve</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="icon danger">
+                        <i class="fas fa-car-crash"></i>
+                    </div>
+                    <h3>Unsafe Driving</h3>
+                    <p>Leads to accidents, fines, and increased insurance costs with no real-time feedback.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon warning">
+                        <i class="fas fa-phone-slash"></i>
+                    </div>
+                    <h3>Distracted Driving</h3>
+                    <p>Phone usage while driving causes 25% of all accidents with no prevention system.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon info">
+                        <i class="fas fa-ambulance"></i>
+                    </div>
+                    <h3>Emergency Response</h3>
+                    <p>No real-time emergency reporting system for immediate assistance when needed.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon success">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>No Incentives</h3>
+                    <p>Safe driving behavior goes unrewarded, missing motivation for improvement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <p class="section-subtitle">Advanced technology for safer roads and better rewards</p>
+            
+            <div class="features-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="safety">Safety Tracking</button>
+                    <button class="tab-btn" data-tab="emergency">Emergency SOS</button>
+                    <button class="tab-btn" data-tab="health">Vehicle Health</button>
+                    <button class="tab-btn" data-tab="rewards">Rewards System</button>
+                </div>
+                
+                <div class="tab-content active" id="safety">
+                    <div class="tab-content-inner">
+                        <div class="tab-text">
+                            <h3>AI-Powered Safe Driving Tracker</h3>
+                            <p>Our advanced AI monitors your driving patterns in real-time, including:</p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Speed and acceleration patterns</li>
+                                <li><i class="fas fa-check-circle"></i> Hard braking incidents</li>
+                                <li><i class="fas fa-check-circle"></i> Phone usage while driving</li>
+                                <li><i class="fas fa-check-circle"></i> Cornering and lane discipline</li>
+                            </ul>
+                            <p>Get instant feedback and weekly reports to improve your driving habits.</p>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                        <div class="tab-image">
+                            <img src="app-screenshots/driving-analytics.jpg" alt="Safety Tracking">
+                            <div class="tech-badge">
+                                <i class="fas fa-brain"></i> AI Technology
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="emergency">
+                    <div class="tab-content-inner">
+                        <div class="tab-text">
+                            <h3>Emergency SOS with Live Location</h3>
+                            <p>When seconds matter, our emergency system provides:</p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> One-tap emergency alerts</li>
+                                <li><i class="fas fa-check-circle"></i> Direct connection to local authorities</li>
+                                <li><i class="fas fa-check-circle"></i> Real-time location sharing</li>
+                                <li><i class="fas fa-check-circle"></i> Automatic crash detection</li>
+                            </ul>
+                            <p>Integrated with police, ambulance, and fire department systems for fastest response.</p>
+                            <a href="#" class="btn btn-outline">See Emergency Features</a>
+                        </div>
+                        <div class="tab-image">
+                            <img src="app-screenshots/emergency-button.jpg" alt="Emergency SOS">
+                            <div class="tech-badge">
+                                <i class="fas fa-bolt"></i> Instant Response
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="health">
+                    <div class="tab-content-inner">
+                        <div class="tab-text">
+                            <h3>Comprehensive Vehicle Health Monitoring</h3>
+                            <p>Keep your vehicle in top condition with our diagnostics:</p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Engine performance analysis</li>
+                                <li><i class="fas fa-check-circle"></i> Tire pressure monitoring</li>
+                                <li><i class="fas fa-check-circle"></i> Fuel efficiency tracking</li>
+                                <li><i class="fas fa-check-circle"></i> Maintenance alerts</li>
+                            </ul>
+                            <p>Works with OBD-II dongle (sold separately) for advanced diagnostics.</p>
+                            <a href="#" class="btn btn-outline">View Vehicle Features</a>
+                        </div>
+                        <div class="tab-image">
+                            <img src="app-screenshots/home-screen.jpg" alt="Vehicle Health">
+                            <div class="tech-badge">
+                                <i class="fas fa-car"></i> OBD-II Integrated
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="rewards">
+                    <div class="tab-content-inner">
+                        <div class="tab-text">
+                            <h3>Gamified Rewards System</h3>
+                            <p>Earn points for safe driving that you can redeem for:</p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Fuel discounts at major stations</li>
+                                <li><i class="fas fa-check-circle"></i> Insurance premium reductions</li>
+                                <li><i class="fas fa-check-circle"></i> Retail gift cards</li>
+                                <li><i class="fas fa-check-circle"></i> Exclusive partner offers</li>
+                            </ul>
+                            <p>The safer you drive, the more you earn - with weekly bonus opportunities.</p>
+                            <a href="#" class="btn btn-outline">Explore Rewards</a>
+                        </div>
+                        <div class="tab-image">
+                            <img src="app-screenshots/home-screen.jpg" alt="Rewards System">
+                            <div class="tech-badge">
+                                <i class="fas fa-gem"></i> Earn Points
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2>How SafeDrive Works</h2>
+            <p class="section-subtitle">Advanced technology working for your safety</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Create Your Account</h3>
+                        <p>Sign up for a SafeDrive account and complete your driver profile.</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Connect Your Vehicle</h3>
+                        <p>Link your smartphone or OBD-II device to start tracking your driving.</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Drive Safely</h3>
+                        <p>Our AI monitors your driving and provides real-time feedback.</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Earn & Redeem</h3>
+                        <p>Accumulate points for safe driving and redeem them for rewards.</p>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="technology-section">
+                <h3>Advanced Technology Stack</h3>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <div class="tech-icon ai">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h4>AI & Machine Learning</h4>
+                        <p>Advanced algorithms analyze driving patterns and predict risky behavior.</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon blockchain">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <h4>Blockchain Security</h4>
+                        <p>Encrypted driver verification and secure reward tokenization.</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon api">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h4>Emergency API</h4>
+                        <p>Direct integration with local law enforcement and EMS systems.</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon iot">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <h4>IoT Connectivity</h4>
+                        <p>OBD-II device integration for comprehensive vehicle diagnostics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Model Section -->
+    <section class="business-model" id="revenue">
+        <div class="container">
+            <h2>Revenue Streams</h2>
+            <p class="section-subtitle">Sustainable business model creating value for all stakeholders</p>
+            
+            <div class="revenue-tabs">
+                <div class="revenue-tab-buttons">
+                    <button class="revenue-tab-btn active" data-revenue-tab="b2c">B2C</button>
+                    <button class="revenue-tab-btn" data-revenue-tab="b2b">B2B</button>
+                    <button class="revenue-tab-btn" data-revenue-tab="secondary">Secondary</button>
+                </div>
+                
+                <div class="revenue-tab-content active" id="b2c">
+                    <div class="revenue-model-card">
+                        <div class="model-icon premium">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3>Premium Subscriptions</h3>
+                        <p class="model-price">$5–10/month</p>
+                        <ul>
+                            <li>Freemium model with basic free tier</li>
+                            <li>Premium features: AI coaching, VIP rewards</li>
+                            <li>Ad-free experience with advanced analytics</li>
+                            <li>Target: 5-10% conversion from free users</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="revenue-tab-content" id="b2b">
+                    <div class="revenue-model-card">
+                        <div class="model-icon insurance">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Insurance Partnerships</h3>
+                        <p class="model-price">10–15% revenue share</p>
+                        <ul>
+                            <li>Usage-based insurance (UBI) integrations</li>
+                            <li>Data licensing to refine risk models</li>
+                            <li>White-label solutions for insurers</li>
+                            <li>Driver risk assessment services</li>
+                        </ul>
+                    </div>
+                    <div class="revenue-model-card">
+                        <div class="model-icon fleet">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3>Fleet Management</h3>
+                        <p class="model-price">$20–50/vehicle/month</p>
+                        <ul>
+                            <li>Custom dashboards for logistics companies</li>
+                            <li>Compliance reporting and driver scoring</li>
+                            <li>Fuel efficiency optimization</li>
+                            <li>Maintenance scheduling integration</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="revenue-tab-content" id="secondary">
+                    <div class="revenue-model-card">
+                        <div class="model-icon rewards">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <h3>Sponsored Rewards</h3>
+                        <p class="model-price">$0.50+ per redemption</p>
+                        <ul>
+                            <li>Brands pay to offer discounts in rewards catalog</li>
+                            <li>Targeted promotions based on driving data</li>
+                            <li>Co-branded marketing campaigns</li>
+                        </ul>
+                    </div>
+                    <div class="revenue-model-card">
+                        <div class="model-icon data">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Data Monetization</h3>
+                        <p class="model-price">Custom pricing</p>
+                        <ul>
+                            <li>Aggregate traffic insights for city planners</li>
+                            <li>Accident hotspot analysis</li>
+                            <li>Auto manufacturer safety R&D data</li>
+                            <li>Anonymized behavioral research</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Users Say</h2>
+            <p class="section-subtitle">Real stories from safer, rewarded drivers</p>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"SafeDrive helped me reduce my insurance premium by 25% in just 3 months. The real-time feedback made me aware of bad habits I didn't even know I had!"</p>
+                        <div class="user">
+                            <img src="photos/photo3.jpeg" alt="Dase J.">
+                            <div class="user-info">
+                                <h4>Dase J.</h4>
+                                <span>Premium User</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p>"The emergency SOS feature literally saved my life after an accident on a rural road. The platform alerted authorities with my exact location when I couldn't."</p>
+                        <div class="user">
+                            <img src="photos/photo1.jpg" alt="Sthembiso M.">
+                            <div class="user-info">
+                                <h4>Sthembiso M.</h4>
+                                <span>Free User</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"As a fleet manager, SafeDrive's business solution has reduced our accident rate by 40% and saved thousands in fuel costs through better driving habits."</p>
+                        <div class="user">
+                            <img src="photos/photo2.jpg" alt="Thembile B.">
+                            <div class="user-info">
+                                <h4>Thembile B.</h4>
+                                <span>Fleet Manager</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-content">
+                    <h2>Ready to Drive Safer and Earn Rewards?</h2>
+                    <p>Join thousands of drivers already benefiting from safer roads and valuable rewards.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-primary btn-large" id="ctaSignUp">
+                            <i class="fas fa-user-plus"></i> Create Free Account
+                        </a>
+                        <a href="#" class="btn btn-secondary btn-large" id="ctaLearnMore">
+                            <i class="fas fa-info-circle"></i> Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="cta-image">
+                    <img src="app-screenshots/home-screen.jpg" alt="Join SafeDrive">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Auth Modals -->
+    <div class="modal" id="signInModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Sign In to SafeDrive</h2>
+            <form id="signInForm">
+                <div class="form-group">
+                    <label for="signInEmail">Email</label>
+                    <input type="email" id="signInEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signInPassword">Password</label>
+                    <input type="password" id="signInPassword" required>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-sign-in-alt"></i> Sign In
+                </button>
+                <div class="social-login">
+                    <p>Or sign in with:</p>
+                    <div class="social-buttons">
+                        <button type="button" class="btn-social google">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                        <button type="button" class="btn-social facebook">
+                            <i class="fab fa-facebook-f"></i> Facebook
+                        </button>
+                    </div>
+                </div>
+                <p class="switch-form">Don't have an account? <a href="#" id="switchToSignUp">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <a href="#" class="logo">
+                        <img src="logo.png" alt="SafeDrive Rewards">
+                        <span>SafeDrive</span>Rewards
+                    </a>
+                    <p>Making roads safer through technology and incentives. Join the movement towards accident-free driving.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>For Businesses</h4>
+                    <ul>
+                        <li><a href="#revenue">Insurance Partners</a></li>
+                        <li><a href="#revenue">Fleet Solutions</a></li>
+                        <li><a href="#revenue">Data Partnerships</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Partner With Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 SafeDrive Rewards. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Sitemap</a>
+                    <a href="#">Accessibility</a>
+                    <a href="#">Patents</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/dark-mode-toggle.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/auth-modals.js"></script>
+</body>
+</html>

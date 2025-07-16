@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Trips | SafeDrive Rewards</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode-css" disabled>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="SafeDrive Rewards">
+                <span>SafeDrive</span>Rewards
+            </a>
+            <ul class="nav-links">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="trips.html" class="active">My Trips</a></li>
+                <li><a href="rewards.html">Rewards</a></li>
+                <li><a href="vehicle.html">Vehicle</a></li>
+                <li><a href="#" class="btn btn-primary" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Trips Main Content -->
+    <main class="dashboard-container" id="trips">
+        <div class="dashboard-header">
+            <div class="user-profile">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="profile-pic">
+                <div class="user-info">
+                    <h1>My Trips</h1>
+                    <div class="trip-stats-summary">
+                        <span class="stat"><i class="fas fa-road"></i> 427 miles</span>
+                        <span class="stat"><i class="fas fa-stopwatch"></i> 14.5 hours</span>
+                        <span class="stat"><i class="fas fa-star"></i> 84 avg score</span>
+                    </div>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="date-filter">
+                    <select id="timeFilter">
+                        <option value="7">Last 7 days</option>
+                        <option value="30" selected>Last 30 days</option>
+                        <option value="90">Last 90 days</option>
+                        <option value="all">All time</option>
+                    </select>
+                </div>
+                <button class="btn btn-secondary" id="exportTrips">
+                    <i class="fas fa-file-export"></i> Export
+                </button>
+            </div>
+        </div>
+
+        <!-- Trip List -->
+        <section class="trips-list-section">
+            <div class="trip-filters">
+                <div class="filter-group">
+                    <label for="tripTypeFilter">Trip Type:</label>
+                    <select id="tripTypeFilter">
+                        <option value="all">All Trips</option>
+                        <option value="commute">Commute</option>
+                        <option value="errand">Errand</option>
+                        <option value="roadtrip">Road Trip</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="scoreFilter">Score:</label>
+                    <select id="scoreFilter">
+                        <option value="all">All Scores</option>
+                        <option value="excellent">Excellent (90+)</option>
+                        <option value="good">Good (75-89)</option>
+                        <option value="fair">Fair (60-74)</option>
+                        <option value="poor">Poor (<60)</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" id="applyFilters">
+                    <i class="fas fa-filter"></i> Apply
+                </button>
+            </div>
+
+            <div class="trip-list">
+                <!-- Trip 1 -->
+                <div class="trip-card excellent">
+                    <div class="trip-header">
+                        <div class="trip-title">
+                            <h3>Work Commute</h3>
+                            <span class="trip-date">Today, 8:30 AM</span>
+                        </div>
+                        <div class="trip-score">
+                            <span class="score-value">92</span>
+                            <span class="score-label">Excellent</span>
+                        </div>
+                    </div>
+                    <div class="trip-details">
+                        <div class="detail">
+                            <i class="fas fa-road"></i>
+                            <span>8.2 miles</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-stopwatch"></i>
+                            <span>22 minutes</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-bolt"></i>
+                            <span>+15 points</span>
+                        </div>
+                    </div>
+                    <div class="trip-map">
+                        <img src="images/map-placeholder-1.jpg" alt="Trip Map" class="map-preview">
+                        <button class="btn-details">
+                            <i class="fas fa-info-circle"></i> Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Trip 2 -->
+                <div class="trip-card good">
+                    <div class="trip-header">
+                        <div class="trip-title">
+                            <h3>Grocery Run</h3>
+                            <span class="trip-date">Yesterday, 5:45 PM</span>
+                        </div>
+                        <div class="trip-score">
+                            <span class="score-value">84</span>
+                            <span class="score-label">Good</span>
+                        </div>
+                    </div>
+                    <div class="trip-details">
+                        <div class="detail">
+                            <i class="fas fa-road"></i>
+                            <span>4.7 miles</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-stopwatch"></i>
+                            <span>15 minutes</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-bolt"></i>
+                            <span>+12 points</span>
+                        </div>
+                    </div>
+                    <div class="trip-map">
+                        <img src="images/map-placeholder-2.jpg" alt="Trip Map" class="map-preview">
+                        <button class="btn-details">
+                            <i class="fas fa-info-circle"></i> Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Trip 3 -->
+                <div class="trip-card fair">
+                    <div class="trip-header">
+                        <div class="trip-title">
+                            <h3>Weekend Road Trip</h3>
+                            <span class="trip-date">Saturday, 10:15 AM</span>
+                        </div>
+                        <div class="trip-score">
+                            <span class="score-value">68</span>
+                            <span class="score-label">Fair</span>
+                        </div>
+                    </div>
+                    <div class="trip-details">
+                        <div class="detail">
+                            <i class="fas fa-road"></i>
+                            <span>42.3 miles</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-stopwatch"></i>
+                            <span>1 hour 8 minutes</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-bolt"></i>
+                            <span>+5 points</span>
+                        </div>
+                    </div>
+                    <div class="trip-map">
+                        <img src="images/map-placeholder-3.jpg" alt="Trip Map" class="map-preview">
+                        <button class="btn-details">
+                            <i class="fas fa-info-circle"></i> Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Trip 4 -->
+                <div class="trip-card poor">
+                    <div class="trip-header">
+                        <div class="trip-title">
+                            <h3>Rush Hour Commute</h3>
+                            <span class="trip-date">Friday, 5:30 PM</span>
+                        </div>
+                        <div class="trip-score">
+                            <span class="score-value">52</span>
+                            <span class="score-label">Needs Improvement</span>
+                        </div>
+                    </div>
+                    <div class="trip-details">
+                        <div class="detail">
+                            <i class="fas fa-road"></i>
+                            <span>7.8 miles</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-stopwatch"></i>
+                            <span>35 minutes</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-bolt"></i>
+                            <span>+2 points</span>
+                        </div>
+                        <div class="detail warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>3 incidents</span>
+                        </div>
+                    </div>
+                    <div class="trip-map">
+                        <img src="images/map-placeholder-4.jpg" alt="Trip Map" class="map-preview">
+                        <button class="btn-details">
+                            <i class="fas fa-info-circle"></i> Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <button class="btn-pagination" disabled>
+                    <i class="fas fa-chevron-left"></i> Previous
+                </button>
+                <span class="page-info">Page 1 of 3</span>
+                <button class="btn-pagination">
+                    Next <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <input type="checkbox" id="darkModeToggle" class="toggle-checkbox">
+        <label for="darkModeToggle" class="toggle-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="toggle-ball"></span>
+        </label>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/script.js"></script>
+    <script src="js/dark-mode-toggle.js"></script>
+    <script src="js/trips.js"></script>
+</body>
+</html>
