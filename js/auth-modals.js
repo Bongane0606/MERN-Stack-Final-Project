@@ -1,19 +1,11 @@
-// Combined Authentication and Modal Handling
+import { authAPI } from './api.js';
+import { authService } from './auth.js';
+
 document.addEventListener('DOMContentLoaded', function() {
     // 1. Authentication Functionality
-    const userDatabase = {
-        "user@example.com": {
-            password: "SafeDrive123",
-            name: "John Driver",
-            points: 1250,
-            vehicle: "Toyota Camry 2021"
-        }
-    };
-
-    // Login form submission
     const loginForm = document.getElementById('signInForm');
     if (loginForm) {
-        loginForm.addEventListener('submit', function(e) {
+        loginForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             const email = document.getElementById('signInEmail').value.trim();
             const password = document.getElementById('signInPassword').value;
@@ -34,14 +26,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // Validate credentials
-            if (userDatabase[email] && userDatabase[email].password === password) {
-                // Successful login
+            try {
+                // Call backend API for login
+                const response = await authAPI.login({ email, password });
+                
+                // Store token
+                authService.setToken(response.token);
+                
+                // Get user details
+                const userResponse = await authAPI.getMe(response.token);
+                const user = userResponse.data;
+                
+                // Store user data in localStorage
                 localStorage.setItem('currentUser', JSON.stringify({
-                    email: email,
-                    name: userDatabase[email].name,
-                    points: userDatabase[email].points,
-                    vehicle: userDatabase[email].vehicle
+                    email: user.email,
+                    name: user.name,
+                    points: user.points || 0,
+                    vehicle: user.vehicle ? `${user.vehicle.make} ${user.vehicle.model} ${user.vehicle.year}` : 'No vehicle registered',
+                    phone: user.phone
                 }));
                 
                 // Close modal if exists
@@ -51,12 +53,101 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.body.style.overflow = 'auto';
                 }
                 
-                // Redirect to dashboard
-                window.location.href = 'dashboard.html';
-            } else {
+                // Update UI
+                updateAuthUI();
+                
+                // Show success message
+                showAlert('Login successful!', 'success');
+                
+                // Redirect to dashboard if on homepage
+                if (window.location.pathname.endsWith('index.html') || 
+                    window.location.pathname === '/') {
+                    window.location.href = 'dashboard.html';
+                }
+            } catch (error) {
+                console.error('Login error:', error);
                 // Show error
                 if (errorElement) {
-                    errorElement.textContent = 'Invalid email or password';
+                    errorElement.textContent = error.message || 'Invalid email or password';
+                    errorElement.style.display = 'block';
+                }
+            }
+        });
+    }
+
+    // 2. Registration Functionality
+    const signUpForm = document.getElementById('signUpForm');
+    if (signUpForm) {
+        signUpForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('signUpName').value.trim(),
+                email: document.getElementById('signUpEmail').value.trim(),
+                password: document.getElementById('signUpPassword').value,
+                phone: document.getElementById('signUpPhone').value.trim(),
+                drivingLicense: document.getElementById('signUpLicense').value.trim()
+            };
+
+            // Clear previous errors
+            const errorElement = document.getElementById('signUpError');
+            if (errorElement) {
+                errorElement.textContent = '';
+                errorElement.style.display = 'none';
+            }
+
+            // Validate inputs
+            if (!formData.name || !formData.email || !formData.password || !formData.phone || !formData.drivingLicense) {
+                if (errorElement) {
+                    errorElement.textContent = 'Please fill in all fields';
+                    errorElement.style.display = 'block';
+                }
+                return;
+            }
+
+            try {
+                // Call backend API for registration
+                const response = await authAPI.register(formData);
+                
+                // Store token
+                authService.setToken(response.token);
+                
+                // Get user details
+                const userResponse = await authAPI.getMe(response.token);
+                const user = userResponse.data;
+                
+                // Store user data in localStorage
+                localStorage.setItem('currentUser', JSON.stringify({
+                    email: user.email,
+                    name: user.name,
+                    points: user.points || 0,
+                    vehicle: 'No vehicle registered',
+                    phone: user.phone
+                }));
+                
+                // Close modal if exists
+                const signUpModal = document.getElementById('signUpModal');
+                if (signUpModal) {
+                    signUpModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+                
+                // Update UI
+                updateAuthUI();
+                
+                // Show success message
+                showAlert('Registration successful!', 'success');
+                
+                // Redirect to dashboard if on homepage
+                if (window.location.pathname.endsWith('index.html') || 
+                    window.location.pathname === '/') {
+                    window.location.href = 'dashboard.html';
+                }
+            } catch (error) {
+                console.error('Registration error:', error);
+                // Show error
+                if (errorElement) {
+                    errorElement.textContent = error.message || 'Registration failed. Please try again.';
                     errorElement.style.display = 'block';
                 }
             }
@@ -97,6 +188,9 @@ document.addEventListener('DOMContentLoaded', function() {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
             if (signUpModal) {
+                // Clear form when opening
+                const form = signUpModal.querySelector('form');
+                if (form) form.reset();
                 signUpModal.classList.add('active');
                 document.body.style.overflow = 'hidden';
             }
@@ -152,8 +246,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // 3. Session Management
     // Check if user is logged in when loading dashboard pages
     if (window.location.pathname.includes('dashboard')) {
-        if (!localStorage.getItem('currentUser')) {
-            window.location.href = '../index.html';
+        if (!authService.isAuthenticated()) {
+            window.location.href = 'index.html';
         } else {
             try {
                 const user = JSON.parse(localStorage.getItem('currentUser'));
@@ -169,7 +263,8 @@ document.addEventListener('DOMContentLoaded', function() {
             } catch (e) {
                 console.error('Error parsing user data:', e);
                 localStorage.removeItem('currentUser');
-                window.location.href = '../index.html';
+                authService.removeToken();
+                window.location.href = 'index.html';
             }
         }
     }
@@ -180,7 +275,73 @@ document.addEventListener('DOMContentLoaded', function() {
         logoutBtn.addEventListener('click', function(e) {
             e.preventDefault();
             localStorage.removeItem('currentUser');
-            window.location.href = '../index.html';
+            authService.removeToken();
+            updateAuthUI();
+            window.location.href = 'index.html';
         });
     }
+
+    // Update authentication UI state
+    function updateAuthUI() {
+        const isAuthenticated = authService.isAuthenticated();
+        
+        // Update navigation
+        const navSignIn = document.getElementById('navSignIn');
+        const userMenu = document.getElementById('userMenu');
+        
+        if (navSignIn) navSignIn.style.display = isAuthenticated ? 'none' : 'block';
+        if (userMenu) userMenu.style.display = isAuthenticated ? 'block' : 'none';
+        
+        // Update dashboard elements if on dashboard
+        if (window.location.pathname.includes('dashboard') && isAuthenticated) {
+            const user = JSON.parse(localStorage.getItem('currentUser'));
+            if (user) {
+                if (document.getElementById('userName')) {
+                    document.getElementById('userName').textContent = user.name;
+                }
+                if (document.getElementById('userPoints')) {
+                    document.getElementById('userPoints').textContent = user.points;
+                }
+                if (document.getElementById('userVehicle')) {
+                    document.getElementById('userVehicle').textContent = user.vehicle;
+                }
+            }
+        }
+    }
+
+    // Initialize UI state
+    updateAuthUI();
 });
+
+// Helper function to show alerts
+function showAlert(message, type) {
+    const alertContainer = document.getElementById('alertContainer') || createAlertContainer();
+    const alert = document.createElement('div');
+    alert.className = `alert alert-${type}`;
+    alert.textContent = message;
+    alertContainer.appendChild(alert);
+    
+    // Show alert
+    setTimeout(() => {
+        alert.style.opacity = '1';
+    }, 10);
+    
+    // Hide after 5 seconds
+    setTimeout(() => {
+        alert.style.opacity = '0';
+        setTimeout(() => {
+            alert.remove();
+        }, 300);
+    }, 5000);
+}
+
+function createAlertContainer() {
+    const container = document.createElement('div');
+    container.id = 'alertContainer';
+    container.style.position = 'fixed';
+    container.style.top = '20px';
+    container.style.right = '20px';
+    container.style.zIndex = '1000';
+    document.body.appendChild(container);
+    return container;
+}
