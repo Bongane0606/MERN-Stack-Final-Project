@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Your Vehicle | SafeDrive Rewards</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode-css" disabled>
+    <link rel="stylesheet" href="css/connect.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="SafeDrive Rewards">
+                <span>SafeDrive</span>Rewards
+            </a>
+            <ul class="nav-links">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="#how-it-works">Getting Started</a></li>
+                <li><a href="#rewards">Rewards</a></li>
+                <li><a href="#" class="btn btn-primary" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Connect Vehicle Section -->
+    <main class="connect-container">
+        <div class="connect-header">
+            <h1><i class="fas fa-car"></i> Connect Your Vehicle</h1>
+            <p>Choose how you'd like to connect your vehicle to start earning rewards</p>
+        </div>
+
+        <div class="connection-options">
+            <div class="connection-card" id="obdOption">
+                <div class="connection-icon">
+                    <i class="fas fa-plug"></i>
+                </div>
+                <h2>OBD-II Device</h2>
+                <p>Connect a compatible OBD-II device for the most accurate tracking</p>
+                <div class="device-list">
+                    <h3>Supported Devices:</h3>
+                    <ul>
+                        <li>Automatic Pro</li>
+                        <li>Mojio</li>
+                        <li>Zubie</li>
+                        <li>Most ELM327 devices</li>
+                    </ul>
+                </div>
+                <button class="btn btn-primary" id="connectOBD">
+                    <i class="fas fa-bluetooth"></i> Connect OBD-II
+                </button>
+            </div>
+
+            <div class="connection-card" id="phoneOption">
+                <div class="connection-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h2>Smartphone Only</h2>
+                <p>Use your phone's sensors for basic tracking (less accurate)</p>
+                <div class="phone-features">
+                    <h3>Features:</h3>
+                    <ul>
+                        <li>Basic trip tracking</li>
+                        <li>Speed monitoring</li>
+                        <li>Phone usage detection</li>
+                    </ul>
+                </div>
+                <button class="btn btn-primary" id="connectPhone">
+                    <i class="fas fa-wifi"></i> Connect Phone
+                </button>
+            </div>
+        </div>
+
+        <div class="connection-status" id="connectionStatus" style="display: none;">
+            <div class="status-header">
+                <i class="fas fa-spinner fa-spin"></i>
+                <h2>Connecting to your vehicle...</h2>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="connectionProgress"></div>
+            </div>
+            <p class="status-message" id="statusMessage">Initializing connection...</p>
+            <button class="btn btn-secondary" id="cancelConnection" style="display: none;">
+                Cancel Connection
+            </button>
+        </div>
+
+        <div class="connection-success" id="connectionSuccess" style="display: none;">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Connection Successful!</h2>
+            <p>Your vehicle is now connected to SafeDrive Rewards</p>
+            <div class="success-details">
+                <p><strong>Connection Type:</strong> <span id="connectedType"></span></p>
+                <p><strong>Device ID:</strong> <span id="deviceId"></span></p>
+                <p><strong>Connection Time:</strong> <span id="connectionTime"></span></p>
+            </div>
+            <button class="btn btn-primary" id="goToDashboard">
+                <i class="fas fa-tachometer-alt"></i> Go to Dashboard
+            </button>
+        </div>
+    </main>
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <input type="checkbox" id="darkModeToggle" class="toggle-checkbox">
+        <label for="darkModeToggle" class="toggle-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="toggle-ball"></span>
+        </label>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/script.js"></script>
+    <script src="js/dark-mode-toggle.js"></script>
+    <script src="js/connect.js"></script>
+</body>
+</html>

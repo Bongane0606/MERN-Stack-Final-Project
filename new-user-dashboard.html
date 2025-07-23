@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to SafeDrive Rewards</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode-css" disabled>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="SafeDrive Rewards">
+                <span>SafeDrive</span>Rewards
+            </a>
+            <ul class="nav-links">
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#how-it-works">Getting Started</a></li>
+                <li><a href="#rewards">Rewards</a></li>
+                <li><a href="#" class="btn btn-primary" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Welcome Dashboard -->
+    <main class="dashboard-container" id="dashboard">
+        <div class="dashboard-header">
+            <div class="user-profile">
+                <img src="images/default-profile.png" alt="User" class="profile-pic">
+                <div class="user-info">
+                    <h1>Welcome, <span id="userName">New User</span>!</h1>
+                    <p class="welcome-message">Thank you for joining SafeDrive Rewards. Let's get started!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Getting Started Section -->
+        <section class="dashboard-section getting-started">
+            <h2><i class="fas fa-rocket"></i> Getting Started</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Connect Your Vehicle</h3>
+                        <p>Link your smartphone or OBD-II device to start tracking your driving.</p>
+                        <button class="btn btn-primary" onclick="window.location.href='connect.html'">
+                             <i class="fas fa-car"></i> Connect Now
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Take the Safety Quiz</h3>
+                        <p>Complete our quick quiz to earn your first 100 points.</p>
+                        <button class="btn btn-primary" onclick="window.location.href='quiz.html'">
+                             <i class="fas fa-question-circle"></i> Start Quiz
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Start Your First Trip</h3>
+                        <p>Begin driving to establish your safety score.</p>
+                        <button class="btn btn-primary" onclick="window.location.href='driving.html'">
+                             <i class="fas fa-play"></i> Start Driving
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Stats -->
+        <section class="dashboard-section quick-stats">
+            <h2><i class="fas fa-chart-line"></i> Your Starting Stats</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Safety Score</h3>
+                    <div class="stat-value">--</div>
+                    <p>Complete your first trip to establish</p>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Reward Points</h3>
+                    <div class="stat-value">0</div>
+                    <p>Start earning points today</p>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3>Miles Driven</h3>
+                    <div class="stat-value">0</div>
+                    <p>Track your first mile</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rewards Preview -->
+        <section class="dashboard-section rewards-preview">
+            <div class="section-header">
+                <h2><i class="fas fa-gift"></i> Potential Rewards</h2>
+                <p>Here's what you can earn with safe driving</p>
+            </div>
+            <div class="rewards-grid">
+                <div class="reward-card">
+                    <div class="reward-icon">
+                        <i class="fas fa-gas-pump"></i>
+                    </div>
+                    <h3>Fuel Discount</h3>
+                    <p>5¢ off per gallon</p>
+                    <div class="reward-points">500 pts</div>
+                </div>
+                
+                <div class="reward-card">
+                    <div class="reward-icon">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <h3>Free Coffee</h3>
+                    <p>At participating locations</p>
+                    <div class="reward-points">250 pts</div>
+                </div>
+                
+                <div class="reward-card">
+                    <div class="reward-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Car Wash</h3>
+                    <p>Basic exterior wash</p>
+                    <div class="reward-points">750 pts</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section class="dashboard-section tips-section">
+            <h2><i class="fas fa-lightbulb"></i> Quick Tips</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Phone Usage</h3>
+                    <p>Avoid using your phone while driving to maximize your score.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Speed Control</h3>
+                    <p>Maintain consistent speeds within the limit.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <i class="fas fa-stopwatch"></i>
+                    <h3>Braking</h3>
+                    <p>Gradual stops improve your braking score.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <input type="checkbox" id="darkModeToggle" class="toggle-checkbox">
+        <label for="darkModeToggle" class="toggle-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="toggle-ball"></span>
+        </label>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/script.js"></script>
+    <script src="js/dark-mode-toggle.js"></script>
+    <script>
+        // Set the user's name from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const user = JSON.parse(localStorage.getItem('currentUser'));
+            if (user && user.name) {
+                document.getElementById('userName').textContent = user.name;
+            }
+            
+            // Logout functionality
+            const logoutBtn = document.getElementById('logoutBtn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    localStorage.removeItem('currentUser');
+                    window.location.href = 'index.html';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

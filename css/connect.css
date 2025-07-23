@@ -1,0 +1,185 @@
+/* Connect Vehicle Page Styles */
+.connect-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.connect-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.connect-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.connect-header p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.connection-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.connection-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.connection-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.connection-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.connection-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.connection-card p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.device-list, .phone-features {
+    text-align: left;
+    margin: 2rem 0;
+}
+
+.device-list h3, .phone-features h3 {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.device-list ul, .phone-features ul {
+    list-style-type: none;
+    padding-left: 1rem;
+}
+
+.device-list li, .phone-features li {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.device-list li::before, .phone-features li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+.connection-status, .connection-success {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 2rem auto;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.status-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.status-header i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-right: 1rem;
+}
+
+.status-header h2 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+}
+
+.progress-container {
+    background: #e0e0e0;
+    border-radius: 5px;
+    height: 10px;
+    margin: 2rem 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: var(--primary-color);
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.status-message {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+}
+
+.success-details {
+    background: rgba(76, 175, 80, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.success-details p {
+    margin: 0.5rem 0;
+    color: var(--text-primary);
+}
+
+.success-details strong {
+    color: var(--text-primary);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .connection-options {
+        flex-direction: column;
+    }
+    
+    .connection-card {
+        max-width: 100%;
+    }
+    
+    .status-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .status-header i {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}

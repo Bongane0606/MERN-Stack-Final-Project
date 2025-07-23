@@ -73,9 +73,9 @@
             </div>
             <div class="hero-image">
                 <div class="phone-mockup">
-                    <img src="app-screenshots/home-screen.jpg" alt="SafeDrive App" class="active">
-                    <img src="app-screenshots/emergency-button.jpg" alt="Emergency Feature">
-                    <img src="app-screenshots/driving-analytics.jpg" alt="Driving Analytics">
+                    <img src="photos/vehicle.jpeg" alt="SafeDrive App" class="active">
+                    <img src="photos/SOS.jpeg" alt="Emergency Feature">
+                    <img src="photos/stats.jpeg" alt="Driving Analytics">
                 </div>
                 <div class="mockup-controls">
                     <button class="active" data-slide="0"></button>
@@ -153,7 +153,7 @@
                             <a href="#" class="btn btn-outline">Learn More</a>
                         </div>
                         <div class="tab-image">
-                            <img src="app-screenshots/driving-analytics.jpg" alt="Safety Tracking">
+                            <img src="photos/vehicle.jpeg" width="200" height="300" alt="Safety Tracking">
                             <div class="tech-badge">
                                 <i class="fas fa-brain"></i> AI Technology
                             </div>
@@ -176,7 +176,7 @@
                             <a href="#" class="btn btn-outline">See Emergency Features</a>
                         </div>
                         <div class="tab-image">
-                            <img src="app-screenshots/emergency-button.jpg" alt="Emergency SOS">
+                            <img src="photos/SOS1.jpeg" width="200" height="300" alt="Emergency SOS">
                             <div class="tech-badge">
                                 <i class="fas fa-bolt"></i> Instant Response
                             </div>
@@ -199,7 +199,7 @@
                             <a href="#" class="btn btn-outline">View Vehicle Features</a>
                         </div>
                         <div class="tab-image">
-                            <img src="app-screenshots/home-screen.jpg" alt="Vehicle Health">
+                            <img src="photos/stats.jpeg" width="200" height="300" alt="Vehicle Health">
                             <div class="tech-badge">
                                 <i class="fas fa-car"></i> OBD-II Integrated
                             </div>
@@ -222,7 +222,7 @@
                             <a href="#" class="btn btn-outline">Explore Rewards</a>
                         </div>
                         <div class="tab-image">
-                            <img src="app-screenshots/home-screen.jpg" alt="Rewards System">
+                            <img src="photos/rewards.jpeg" width="200" height="300" alt="Rewards System">
                             <div class="tech-badge">
                                 <i class="fas fa-gem"></i> Earn Points
                             </div>
@@ -340,7 +340,7 @@
                             <i class="fas fa-crown"></i>
                         </div>
                         <h3>Premium Subscriptions</h3>
-                        <p class="model-price">$5–10/month</p>
+                        <p class="model-price">R100–200/month</p>
                         <ul>
                             <li>Freemium model with basic free tier</li>
                             <li>Premium features: AI coaching, VIP rewards</li>
@@ -369,7 +369,7 @@
                             <i class="fas fa-truck"></i>
                         </div>
                         <h3>Fleet Management</h3>
-                        <p class="model-price">$20–50/vehicle/month</p>
+                        <p class="model-price">R200–500/vehicle/month</p>
                         <ul>
                             <li>Custom dashboards for logistics companies</li>
                             <li>Compliance reporting and driver scoring</li>
@@ -385,7 +385,7 @@
                             <i class="fas fa-hand-holding-usd"></i>
                         </div>
                         <h3>Sponsored Rewards</h3>
-                        <p class="model-price">$0.50+ per redemption</p>
+                        <p class="model-price">R10+ per redemption</p>
                         <ul>
                             <li>Brands pay to offer discounts in rewards catalog</li>
                             <li>Targeted promotions based on driving data</li>
@@ -507,7 +507,7 @@
                     </div>
                 </div>
                 <div class="cta-image">
-                    <img src="app-screenshots/home-screen.jpg" alt="Join SafeDrive">
+                    <img src="photos/vehicle.jpeg" alt="Join SafeDrive">
                 </div>
             </div>
         </div>
@@ -546,6 +546,36 @@
             </form>
         </div>
     </div>
+
+    <div class="modal" id="signUpModal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Create Your Account</h2>
+        <form id="signUpForm">
+            <div class="form-group">
+                <label for="signUpName">Full Name</label>
+                <input type="text" id="signUpName" required>
+            </div>
+            <div class="form-group">
+                <label for="signUpEmail">Email</label>
+                <input type="email" id="signUpEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="signUpPassword">Password</label>
+                <input type="password" id="signUpPassword" required>
+            </div>
+            <div class="form-group">
+                <label for="signUpConfirmPassword">Confirm Password</label>
+                <input type="password" id="signUpConfirmPassword" required>
+            </div>
+            <div id="signUpError" class="error-message" style="display: none;"></div>
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-user-plus"></i> Create Account
+            </button>
+            <p class="switch-form">Already have an account? <a href="#" id="switchToSignIn">Sign in</a></p>
+        </form>
+    </div>
+</div>
 
     <!-- Footer -->
     <footer class="footer" id="contact">

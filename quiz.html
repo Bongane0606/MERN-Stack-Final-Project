@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety Quiz | SafeDrive Rewards</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode-css" disabled>
+    <link rel="stylesheet" href="css/quiz.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="SafeDrive Rewards">
+                <span>SafeDrive</span>Rewards
+            </a>
+            <ul class="nav-links">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="#how-it-works">Getting Started</a></li>
+                <li><a href="#rewards">Rewards</a></li>
+                <li><a href="#" class="btn btn-primary" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Quiz Section -->
+    <main class="quiz-container">
+        <div class="quiz-header">
+            <h1><i class="fas fa-question-circle"></i> Safe Driving Quiz</h1>
+            <p>Complete this quiz to earn 100 reward points and learn safe driving practices</p>
+            <div class="quiz-progress">
+                <div class="progress-bar" id="quizProgress"></div>
+                <span id="progressText">0/5 completed</span>
+            </div>
+        </div>
+
+        <div class="quiz-content" id="quizContent">
+            <!-- Questions will be inserted here by JavaScript -->
+        </div>
+
+        <div class="quiz-result" id="quizResult" style="display: none;">
+            <div class="result-icon">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <h2 id="resultTitle">Quiz Completed!</h2>
+            <p id="resultMessage">You scored <span id="score">0</span>/5 correct answers</p>
+            <div class="reward-earned">
+                <p>You've earned <strong>100</strong> reward points!</p>
+                <i class="fas fa-coins"></i>
+            </div>
+            <button class="btn btn-primary" id="returnToDashboard">
+                <i class="fas fa-tachometer-alt"></i> Return to Dashboard
+            </button>
+        </div>
+    </main>
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <input type="checkbox" id="darkModeToggle" class="toggle-checkbox">
+        <label for="darkModeToggle" class="toggle-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="toggle-ball"></span>
+        </label>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/script.js"></script>
+    <script src="js/dark-mode-toggle.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+</html>
